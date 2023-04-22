@@ -1,0 +1,26 @@
+{
+    "name": "feyyazcankose/laravel-dynamic-migrate",
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Feyyazcankose\\LaravelDynamicMigrate\\DynamicMigrationServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Feyyazcankose\\LaravelDynamicMigrate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "feyyazcankose",
+            "email": "kesemenere123@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0|^8.1",
+        "laravel/framework": "^8.40"
+    }
+}
