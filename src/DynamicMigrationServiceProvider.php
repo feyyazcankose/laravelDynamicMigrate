@@ -2,6 +2,7 @@
 
 namespace Feyyazcankose\LaravelDynamicMigrate;
 
+use Feyyazcankose\LaravelDynamicMigrate\Console\Commands\DynamicMigrateCommand;
 use Illuminate\Support\ServiceProvider;
 
 class DynamicMigrationServiceProvider extends ServiceProvider
@@ -13,7 +14,13 @@ class DynamicMigrationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (!file_exists(base_path("app") . '/Seeders')) {
+            mkdir(base_path("app") . '/Seeders', 0777, true);
+        }
+
+        $this->commands([
+            DynamicMigrateCommand::class
+        ]);
     }
 
     /**
@@ -24,6 +31,8 @@ class DynamicMigrationServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        // $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        // $this->loadConsole
+
+
     }
 }

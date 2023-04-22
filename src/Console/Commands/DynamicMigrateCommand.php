@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Feyyazcankose\LaravelDynamicMigrate\Console\Commands;
 
-use App\Seeders\AdminSeeder\AdminSeeder;
+
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 
 class DynamicMigrateCommand extends Command
 {
