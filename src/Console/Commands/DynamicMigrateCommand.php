@@ -39,9 +39,9 @@ class DynamicMigrateCommand extends Command
 
     public function dynamicMigrate($model)
     {
-        if (!Schema::hasTable($model->getTable())) {
+        if (!Schema::hasTable($model->getTable()) && method_exists($model, "setColumns")) {
             Schema::create($model->getTable(), function (Blueprint $table) use ($model) {
-                $model->setColumns($table);
+                @$model->setColumns($table);
             });
             $this->info('Table created successfully: ' . $model->getTable());
         } else if (method_exists($model, "updateColumns")) {
