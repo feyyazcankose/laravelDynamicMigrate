@@ -23,5 +23,6 @@
         "php": "^7.3|^8.0|^8.1",
         "laravel/framework": "^8.40",
         "illuminate/support": "^7.3|^8.0|^8.1|^9.0"
-    }
+    },
+    "minimum-stability": "dev"
 }
